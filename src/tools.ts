@@ -407,8 +407,18 @@ export function createToolDefinitions() {
           selector: { type: "string", description: "CSS selector for the link to click" },
         },
         required: ["selector"],
+      }
+    },{
+      name: "playwright_right_click",
+      description: "Test Right click an element on the page by vtanathip",
+      inputSchema: {
+        type: "object",
+        properties: {
+          selector: { type: "string", description: "CSS selector for the element to click" },
+        },
+        required: ["selector"],
       },
-    },
+    }
   ] as const satisfies Tool[];
 }
 
@@ -433,7 +443,8 @@ export const BROWSER_TOOLS = [
   "playwright_drag",
   "playwright_press_key",
   "playwright_save_as_pdf",
-  "playwright_click_and_switch_tab"
+  "playwright_click_and_switch_tab",
+  "playwright_right_click",
 ];
 
 // API Request tools for conditional launch

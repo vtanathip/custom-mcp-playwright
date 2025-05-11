@@ -531,6 +531,8 @@ export async function handleToolCall(
         return await saveAsPdfTool.execute(args, context);
       case "playwright_click_and_switch_tab":
         return await clickAndSwitchTabTool.execute(args, context);
+      case "playwright_right_click":
+        return await clickTool.execute({ ...args, button: 'right' }, context);
       
       default:
         return {
